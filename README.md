@@ -4,7 +4,7 @@ As a user, <br>
 [/] I want to create a cateogry that can be used to organize my tasks <br>
 [/] I want to edit a category to update the category's details <br>
 [/] I want to view a category to show the category's details <br>
-[ ] I want to create a task for a specific category so that I can organize my tasks quicker <br>
+[/] I want to create a task for a specific category so that I can organize my tasks quicker <br>
 [ ] I want to edit a task to update the task's details <br>
 [ ] I want to delete a task to lessen my unnecessary daily tasks <br>
 [ ] I want to view my tassks for today for me to remind what are my priorities for today <br>
