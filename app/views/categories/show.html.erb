@@ -1,9 +1,43 @@
-<p id="notice"><%= notice %></p>
+  <p>
+    <strong>Category:</strong>
+    <%= @category.task %>
+  </p>
 
-<p>
-  <strong>Task:</strong>
-  <%= @category.task %>
-</p>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <h2>Add a task:</h2> 
+  <%= form_with model: [ @category, @category.todos.build ] do |form| %>
+    <p>
+      <%= form.label :todo %><br>
+      <%= form.text_field :todo %>
+    </p>
+      <p>
+      <%= form.label :description %><br>
+      <%= form.text_area :description, size: "60x10" %>
+    </p>
+      <p>
+      <%= form.label :due_date %><br>
+      <%= form.date_field :due_date %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+  <table>
+    <thead>
+      List
+    </thead>
+        <TH>Task</TH>
+        <th>description</th>
+        <TH>Due Date</TH>
+    <tr>
+  <% @category.todos.each do |todo| %>
+      <td><%= todo.todo %></td>
+      <td><%= todo.description %></td>
+      <td><%= todo.due_date %></td>
+    </tr>
+  <% end %> 
+  </table>
+
