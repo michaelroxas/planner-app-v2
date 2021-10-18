@@ -1,0 +1,7 @@
+<% @category.todos.each do |todo| %>
+    <tr>
+        <td><%= todo.todo %></td>
+        <td><%= todo.description %></td>
+        <td><%= todo.due_date %></td>
+    </tr>
+<% end %> 

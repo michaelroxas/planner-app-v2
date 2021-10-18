@@ -1,0 +1,19 @@
+  <%= form_with model: [ @category, @category.todos.build ] do |form| %>
+    <p>
+      <%= form.label :todo %><br>
+      <%= form.text_field :todo %>
+    </p>
+      <p>
+      <%= form.label :description %><br>
+      <%= form.text_area :description, size: "60x10" %>
+    </p>
+      <p>
+      <%= form.label :due_date %><br>
+      <%= form.date_field :due_date %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+
