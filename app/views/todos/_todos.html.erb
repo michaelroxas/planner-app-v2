@@ -1,7 +1,13 @@
-<% @category.todos.each do |todo| %>
+    <thead>
+        <tr>
+            <td><strong>task</strong></td>
+            <td><strong>due date</strong></td>            
+        </tr>
+    </thead>
     <tr>
+<% @category.todos.each do |todo| %>
         <td><%= todo.todo %></td>
-        <td><%= todo.description %></td>
         <td><%= todo.due_date %></td>
-    </tr>
+        <td><%= link_to 'Delete', [todo.category, todo], method: :delete %> </td>
 <% end %> 
+    </tr>
