@@ -8,10 +8,38 @@
 
   <h2>Add a task:</h2> 
 
-<%# render form  %>
-<%= render 'todos/form' %>
+  <%= form_with model: [ @category, @category.todos.build ] do |form| %>
+    <p>
+      <%= form.label :todo %><br>
+      <%= form.text_field :todo %>
+    </p>
+      <p>
+      <%= form.label :due_date %><br>
+      <%= form.date_field :due_date %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+  <table>    
+    <thead>
+        <% @category.todos.each do |todo| %>
+          <tr>
+              <td><strong>task</strong></td>
+              <td><strong>due date</strong></td>            
+          </tr>
+    </thead>
+      <tr>
+          <td><%= todo.todo %></td>
+          <td><%= todo.due_date %></td>
+          <td><%= link_to 'Delete', [todo.category, todo], method: :delete %> </td>
+        <% end %> 
+      </tr>
+    </table>
+
+
+
+<%#= render 'todos/form' %>
 
 <%# render tasks %>
-<table>
-<%= render 'todos/todos' %>
-</table>
